@@ -1,0 +1,5 @@
+.env
+goose.txt
+
+venv/
+__pycache__/
