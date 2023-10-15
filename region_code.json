@@ -1,0 +1,192 @@
+[
+    {
+        "code": "da-DK",
+        "country": "Denmark",
+        "language": "Danish"
+    },
+    {
+        "code": "de-AT",
+        "country": "Austria",
+        "language": "German"
+    },
+    {
+        "code": "de-CH",
+        "country": "Switzerland",
+        "language": "German"
+    },
+    {
+        "code": "de-DE",
+        "country": "Germany",
+        "language": "German"
+    },
+    {
+        "code": "en-AU",
+        "country": "Australia",
+        "language": "English"
+    },
+    {
+        "code": "en-CA",
+        "country": "Canada",
+        "language": "English"
+    },
+    {
+        "code": "en-GB",
+        "country": "United Kingdom",
+        "language": "English"
+    },
+    {
+        "code": "en-ID",
+        "country": "Indonesia",
+        "language": "English"
+    },
+    {
+        "code": "en-IN",
+        "country": "India",
+        "language": "English"
+    },
+    {
+        "code": "en-MY",
+        "country": "Malaysia",
+        "language": "English"
+    },
+    {
+        "code": "en-NZ",
+        "country": "New Zealand",
+        "language": "English"
+    },
+    {
+        "code": "en-PH",
+        "country": "Republic of the Philippines",
+        "language": "English"
+    },
+    {
+        "code": "en-US",
+        "country": "United States",
+        "language": "English"
+    },
+    {
+        "code": "en-ZA",
+        "country": "South Africa",
+        "language": "English"
+    },
+    {
+        "code": "es-AR",
+        "country": "Argentina",
+        "language": "Spanish"
+    },
+    {
+        "code": "es-CL",
+        "country": "Chile",
+        "language": "Spanish"
+    },
+    {
+        "code": "es-ES",
+        "country": "Spain",
+        "language": "Spanish"
+    },
+    {
+        "code": "es-MX",
+        "country": "Mexico",
+        "language": "Spanish"
+    },
+    {
+        "code": "es-US",
+        "country": "United States",
+        "language": "Spanish"
+    },
+    {
+        "code": "fi-FI",
+        "country": "Finland",
+        "language": "Finnish"
+    },
+    {
+        "code": "fr-BE",
+        "country": "Belgium",
+        "language": "French"
+    },
+    {
+        "code": "fr-CA",
+        "country": "Canada",
+        "language": "French"
+    },
+    {
+        "code": "fr-CH",
+        "country": "Switzerland",
+        "language": "French"
+    },
+    {
+        "code": "fr-FR",
+        "country": "France",
+        "language": "French"
+    },
+    {
+        "code": "it-IT",
+        "country": "Italy",
+        "language": "Italian"
+    },
+    {
+        "code": "ja-JP",
+        "country": "Japan",
+        "language": "Japanese"
+    },
+    {
+        "code": "ko-KR",
+        "country": "Korea",
+        "language": "Korean"
+    },
+    {
+        "code": "nl-BE",
+        "country": "Belgium",
+        "language": "Dutch"
+    },
+    {
+        "code": "nl-NL",
+        "country": "Netherlands",
+        "language": "Dutch"
+    },
+    {
+        "code": "no-NO",
+        "country": "Norway",
+        "language": "Norwegian"
+    },
+    {
+        "code": "pl-PL",
+        "country": "Poland",
+        "language": "Polish"
+    },
+    {
+        "code": "pt-BR",
+        "country": "Brazil",
+        "language": "Portuguese"
+    },
+    {
+        "code": "ru-RU",
+        "country": "Russia",
+        "language": "Russian"
+    },
+    {
+        "code": "sv-SE",
+        "country": "Sweden",
+        "language": "Swedish"
+    },
+    {
+        "code": "tr-TR",
+        "country": "Turkey",
+        "language": "Turkish"
+    },
+    {
+        "code": "zh-CN",
+        "country": "Peoples Republic of China",
+        "language": "Chinese"
+    },
+    {
+        "code": "zh-HK",
+        "country": "Hong Kong SAR",
+        "language": "Traditional Chinese"
+    },
+    {
+        "code": "zh-TW",
+        "country": "Taiwan",
+        "language": "Traditional Chinese"
+    }
+]

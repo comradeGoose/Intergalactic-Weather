@@ -1,3 +1,3 @@
-# Intergalactic weather
+# Intergalactic Weather
 
-### Bing wallpaper and OpenWeather
+### Bing Wallpaper and OpenWeather
