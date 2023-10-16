@@ -8,33 +8,18 @@ router = APIRouter(
     prefix="/wallpaper",
     tags=["wallpaper"]
 )
-
-# templates = Jinja2Templates(directory="templates")
-
-def extract_state(input_string):
-    pattern = r',\s(.+?)\s\('
-    match = re.search(pattern, input_string)
-    if match:
-        state = match.group(1)
-        return state
-    else:
-        return None
-
+ 
 def extract_location(input_string):
-    pattern = r',\s(.+),\s(.+)\s\('
-    match = re.search(pattern, input_string)
-    if match:
-        location = f'{match.group(1)}, {match.group(2)}'
-        return location
-    else:
-        return None
-    
-# test_strings = [ 
-#     '--- , --- , dets , dets (123)', # gg
-#     '--- , dets, dets (123)',
-#     '--- , dets (123)' 
-#     ]
-# [print(extract_state(test)) for test in test_strings]
+    # Используем регулярные выражения для поиска подстрок
+    pattern1 = r'([^,]+,\s[^,]+)\s\('
+    match1 = re.search(pattern1, input_string)
+    substring1 = match1.group(1) if match1 else None
+
+    pattern2 = r',\s([^,]+)\s\('
+    match2 = re.search(pattern2, input_string)
+    substring2 = match2.group(1) if match2 else None
+
+    return [substring1[1:], substring2]
 
 @router.post('')
 def wallpaper(id: int = 0):
@@ -44,11 +29,10 @@ def wallpaper(id: int = 0):
     copyrightlink = json.loads(data)['images'][0]['copyrightlink']
     url = json.loads(data)['images'][0]['urlbase']
     # location = extract_location(copyright)
-    state = extract_state(copyright)
+    location = extract_location(copyright)
     return {
         'url': f'https://www.bing.com/{url}_1920x1080.jpg', 
         'copyright': copyright,
         'copyrightlink': copyrightlink,
-        # 'location': location,
-        'state': state
+        'location': location
     }
