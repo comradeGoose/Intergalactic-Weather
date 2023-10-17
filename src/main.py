@@ -2,20 +2,21 @@ from fastapi import FastAPI, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
 
 from datetime import datetime
 
 from wallpaper.wallpaper import wallpaper
-from weather.weather import weather
+from weather.weather import now
 
 from wallpaper.wallpaper import router as router_wallpaper
 from weather.weather import router as router_weather
-# from pages.router import router as router_pages
+from pages.router import router as router_pages
 
 app = FastAPI(
-    title='Intergalactic Weather'
+    title='Intergalactic Weather',
+    version='0.0.1 ~ 4'
 )
-
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # @app.get('/')
@@ -24,41 +25,20 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="static/html")
 
+
 @app.get("/")
-def main_page(request: Request, wallpaper_data=Depends(wallpaper)):
-  
-  try:
-    weather_data = weather(wallpaper_data['location'][0])
-    if weather_data['cod'] != '404':
-      icon_current_weather = f'https://openweathermap.org/img/wn/{weather_data["weather"][0]["icon"]}@2x.png'
-      return templates.TemplateResponse("base.html", {
-        'request': request, 
-        'wallpaper_data': wallpaper_data, 
-        'weather_data': weather_data,
-        'icon_current_weather': icon_current_weather
-        })
-    else:
-      weather_data = weather(wallpaper_data['location'][1])
-      icon_current_weather = f'https://openweathermap.org/img/wn/{weather_data["weather"][0]["icon"]}@2x.png'
-      return templates.TemplateResponse("base.html", {
-        'request': request, 
-        'wallpaper_data': wallpaper_data, 
-        'weather_data': weather_data,
-        'icon_current_weather': icon_current_weather
-        })
-    
-  except Exception as e:
-    print(str(e))
-    return templates.TemplateResponse("base.html", {
-      'request': request, 
-      'wallpaper_data': 'error', 
-      'weather_data': 'error',
-      'icon_current_weather': 'error'
-      })
+def redirect():
+    return RedirectResponse("/page/main")
+
+
+@app.get("/page")
+def redirect():
+    return RedirectResponse("/page/main")
+
 
 app.include_router(router_wallpaper)
 app.include_router(router_weather)
-# app.include_router(router_pages)
+app.include_router(router_pages)
 
 origins = [
     "http://localhost:8000",
