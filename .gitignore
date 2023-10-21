@@ -4,3 +4,8 @@ goose.txt
 .vscode
 venv/
 __pycache__/
+
+static/html/test.html
+
+test.json
+

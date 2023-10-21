@@ -3,7 +3,7 @@ var btn_index = Number(document.querySelector('#btn-index').textContent);
 const btn_next = document.querySelector('#btn-next');
 
 const next = () => {
-    
+
     if (btn_index === 0) return;
     btn_index -= 1;
     window.location.href = '/page/main?id=' + btn_index;
@@ -19,14 +19,10 @@ const next = () => {
             console.log(data);
             const url = data.url;
             const body = document.body;
-
-            // Добавьте класс `fade-in` перед сменой фона
             body.classList.add('fade-in');
-
-            // Устанавливаем новый фон после начала анимации
             setTimeout(() => {
                 body.style.backgroundImage = `url('${url}')`;
-            }, 500); // Задержка в миллисекундах, равная продолжительности анимации
+            }, 500);
 
             document.querySelector('#btn-index').textContent = btn_index;
             const copyrightLink = document.getElementById('copyright');
@@ -56,15 +52,10 @@ const previous = () => {
             console.log(data);
             const url = data.url;
             const body = document.body;
-
-            // Добавьте класс `fade-in` перед сменой фона
             body.classList.add('fade-in');
-
-            // Устанавливаем новый фон после начала анимации
             setTimeout(() => {
                 body.style.backgroundImage = `url('${url}')`;
-            }, 500); // Задержка в миллисекундах, равная продолжительности анимации
-
+            }, 500);
             document.querySelector('#btn-index').textContent = btn_index;
             const copyrightLink = document.getElementById('copyright');
             const newHref = data.copyrightlink;

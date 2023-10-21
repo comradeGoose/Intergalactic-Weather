@@ -21,21 +21,24 @@ def tokur(cod: int = 200, message: str = ""):
     }
 
 
-def extract_location(input_string):
-    # Используем регулярные выражения для поиска подстрок
+def extract_location(input_string: str) -> {"city": str, "state": str}:
+    '''
+    returns a dictionary with two substrings of the input string
+    '''
     pattern_city = r"([^,]+,\s[^,]+)\s\("
     match_city = re.search(pattern_city, input_string)
     city = match_city.group(1) if match_city else None
-
     pattern_state = r",\s([^,]+)\s\("
     match_state = re.search(pattern_state, input_string)
     state = match_state.group(1) if match_state else None
-
     return {"city": city[1:], "state": state}
 
 
 @router.get("")
 async def wallpaper(id: int = 0):
+    '''
+    returns information about the current Bing Wallpaper
+    '''
 
     try:
         if type(id) != int:

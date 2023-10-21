@@ -46,6 +46,9 @@ def get_horizon_side(deg: int) -> int:
 
 @router.get('/now')
 async def now(city: str = 'Tokur'):
+    '''
+    /now returns information about the weather in a given location
+    '''
 
     try:
         response = requests.get(
@@ -103,6 +106,9 @@ async def now(city: str = 'Tokur'):
 
 @router.get('/forecast')
 async def forecast(city: str = 'Tokur', count: int = 40):
+    '''
+    /forecast returns a forecast from count elements with a difference of 3 hours in a given location
+    '''
 
     try:
         response = requests.get(
@@ -151,6 +157,9 @@ async def forecast(city: str = 'Tokur', count: int = 40):
 
 @router.get('/direct')
 async def direct(city: str = 'Tokur'):
+    '''
+    /direct returns . . .
+    '''
 
     try:
         response = requests.get(
@@ -168,6 +177,9 @@ async def direct(city: str = 'Tokur'):
 
 @router.get('/air_pollution')
 async def air_pollution(city: str = 'Tokur'):
+    '''
+    /air_pollution returns . . .
+    '''
 
     coordinates = await direct(city)
 

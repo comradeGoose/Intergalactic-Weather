@@ -6,23 +6,23 @@
 
   <div class="col-md-4">
 
-    <div class="card text-center h-100 text-bg-secondary bg-opacity-25">
-      <div class="card-header text-bg-secondary bg-opacity-25">
-        <img class="text-white" src="/static/image/location_black.png" alt="" height="24" width="24">
+    <div class="card text-center h-100 text-bg-secondary bg-opacity-50">
+      <div class="card-header text-bg-secondary bg-opacity-25 font-monospace">
+        <img class="" src="/static/image/location_black.png" alt="" height="24" width="24">
         {{weather_now.name}}, {{weather_now.sys.country}}
       </div>
       <div class="card-body">
-        <h1 class="card-title"><img src={{icon_weather_now}} alt="icon weather now"> {{weather_now.main.temp}}°C</h1>
+        <h1 class="card-title font-monospace"><img src={{icon_weather_now}} alt="icon weather now"> {{weather_now.main.temp}}°C</h1>
         <p class="card-text">
           <!-- With supporting text below as a natural lead-in to additional content. -->
         <div class="container text-center">
           <div class="row row-cols-1">
-            <div class="col">Feels like {{weather_now.main.feels_like}}°C. {{weather_now.weather.description}}.</div>
+            <div class="col font-monospace">Feels like {{weather_now.main.feels_like}}°C. {{weather_now.weather.description}}.</div>
           </div>
           <div class="row row-cols-1 row-cols-sm-2">
-            <div class="col">Pressure:
+            <div class="col font-monospace">Pressure:
               <svg width="15pt" height="15pt" viewBox="0 0 96 96" class="icon-pressure">
-                <g data-v-7bdd0738="" transform="translate(0,96) scale(0.100000,-0.100000)" fill="#48484a"
+                <g data-v-7bdd0738="" transform="translate(0,96) scale(0.100000,-0.100000)" fill="#ffffff"
                   stroke="none">
                   <path d="M351 854 c-98 -35 -179 -108 -227 -202 -27 -53 -29 -65 -29 -172 0
                 -107 2 -119 29 -172 38 -75 104 -141 180 -181 58 -31 66 -32 176 -32 110 0
@@ -40,11 +40,11 @@
               </svg>
               {{weather_now.main.pressure}}hPa
             </div>
-            <div class="col">Humidity: {{weather_now.main. humidity}}</div>
-            <div class="col">Wind:
+            <div class="col font-monospace">Humidity: {{weather_now.main. humidity}}</div>
+            <div class="col font-monospace">Wind:
               <svg viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"
                 style="transform: rotate({{weather_now.wind.deg}}deg); height: 10pt">
-                <g fill="#48484a">
+                <g fill="#ffffff">
                   <path
                     d="M510.5,749.6c-14.9-9.9-38.1-9.9-53.1,1.7l-262,207.3c-14.9,11.6-21.6,6.6-14.9-11.6L474,48.1c5-16.6,14.9-18.2,21.6,0l325,898.7c6.6,16.6-1.7,23.2-14.9,11.6L510.5,749.6z">
                   </path>
@@ -55,11 +55,11 @@
               </svg>
               {{weather_now.wind.speed}}m/s {{weather_now.wind.horizon_side}}
             </div>
-            <div class="col">Visibility: {{weather_now.visibility}}</div>
-            <div class="col">Sunrise: <img src="/static/image/sunrise.png" alt="sunrise"
+            <div class="col font-monospace">Visibility: {{weather_now.visibility}}</div>
+            <div class="col font-monospace">Sunrise: <img src="/static/image/sunrise.png" alt="sunrise"
                 height="20">{{weather_now.sys.sunrise}}
             </div>
-            <div class="col">Sunset: <img src="/static/image/sunset.png" alt="sunset"
+            <div class="col font-monospace">Sunset: <img src="/static/image/sunset.png" alt="sunset"
                 height="20">{{weather_now.sys.sunset}}
             </div>
           </div>
@@ -67,7 +67,7 @@
         </p>
       </div>
 
-      <div class="card-footer d-flex justify-content-between text-bg-secondary bg-opacity-25">
+      <div class="card-footer d-flex justify-content-between text-bg-secondary bg-opacity-25 font-monospace">
         <a href="https://openweathermap.org/">
           <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt=""
             height="25">
@@ -81,8 +81,8 @@
 
   <div class="col-md-8">
 
-    <div class="card text-center h-100 text-bg-secondary bg-opacity-25">
-      <div class="card-header text-bg-secondary bg-opacity-25">
+    <div class="card text-center h-100 text-bg-secondary bg-opacity-50">
+      <div class="card-header text-bg-secondary bg-opacity-25 font-monospace">
         Forecast
       </div>
       <div class="card-body">
