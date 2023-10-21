@@ -7,17 +7,17 @@ import re
 router = APIRouter(prefix="/wallpaper", tags=["wallpaper"])
 
 
-def error(message: str = ""):
+def tokur(cod: int = 200, message: str = ""):
     return {
-        "url": "/static/2023-07-18_16-11_tokur.jpg",
-        "copyright": "- - - , Tokur, Amur Oblast, Russia (© comrade goose)",
-        "copyrightlink": "",
+        "url": "/static/image/2023-07-18_16-11_tokur.jpg",
+        "copyright": "Центр ОВД (локатор), Токур, Амурская Область, Россия (© comrade goose)",
+        "copyrightlink": "/page/tokur",
         "location": {
-            "city": "Tokur, Amur Oblast, Russia",
-            "state": "Amur Oblast, Russia",
+            "city": "Токур, Амурская Область, Россия",
+            "state": "Амурская Область, Россия",
         },
-        "cod": 500,
-        "error": message,
+        "cod": cod,
+        "message": message,
     }
 
 
@@ -35,15 +35,16 @@ def extract_location(input_string):
 
 
 @router.get("")
-def wallpaper(id: int = 0):
+async def wallpaper(id: int = 0):
 
     try:
         if type(id) != int:
-            return error(f'type(id): {type(id)}')
+            return {'cod': 500, 'description': f'type(id): {type(id)}'}
 
-        response = requests.get(f"https://www.bing.com/HPImageArchive.aspx?format=js&idx={id}&n=1&mkt=ru")
+        response = requests.get(
+            f"https://www.bing.com/HPImageArchive.aspx?format=js&idx={id}&n=1&mkt=ru")
         if response.status_code != 200:
-            return error(response.status_code)
+            return {'cod': response.status_code, 'description': response.status_code}
 
         data = response.json()
         copyright = data["images"][0]["copyright"]
@@ -52,7 +53,7 @@ def wallpaper(id: int = 0):
         location = extract_location(copyright)
 
         return {
-            "url": f"https://www.bing.com/{url}_1920x1080.jpg",
+            "url": f"https://www.bing.com{url}_1920x1080.jpg",
             "copyright": copyright,
             "copyrightlink": copyrightlink,
             "location": location,
@@ -60,7 +61,4 @@ def wallpaper(id: int = 0):
         }
 
     except Exception as e:
-        print(str(e))
-        return error(str(e))
-
-
+        return {'cod': 500, 'description': str(e)}

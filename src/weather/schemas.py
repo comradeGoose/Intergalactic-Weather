@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class DirectModel(BaseModel):
     name: str
     local_names: dict
@@ -8,8 +9,10 @@ class DirectModel(BaseModel):
     country: str
     state: str
 
+
 class WeatherModel(BaseModel):
     pass
+
 
 class ForecastModel(BaseModel):
     pass

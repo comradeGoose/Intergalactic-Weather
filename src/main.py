@@ -35,6 +35,10 @@ def redirect():
 def redirect():
     return RedirectResponse("/page/main")
 
+@app.get("/page/")
+def redirect():
+    return RedirectResponse("/page/main")
+
 
 app.include_router(router_wallpaper)
 app.include_router(router_weather)

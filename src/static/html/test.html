@@ -1,0 +1,72 @@
+<div class="container text-center">
+    <div class="row">
+  
+      <div class="col-md-4">
+        <div class="card text-bg-light bg-opacity-50">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-header">
+            <img src="/static/image/location.png" alt="location" width="20" height="20">
+            
+            <h5 class="card-title">{{weather_data.name}}, {{weather_data.sys.country}}</h5>
+          </div>
+          <div class="card-body">
+            
+            <div class="container text-center">
+              <div class="row justify-content-md-center">
+                <div class="col"><img src={{ icon_current_weather }} alt=""></div>
+                <div class="col d-flex justify-content-center align-items-center">
+                  <h3> {{weather_data.main.temp}}°C</h3>
+                </div>
+              </div>
+              <div class="col">
+                {% for weather in weather_data.weather %}
+                <p class="card-text">Feels like {{weather_data.main.feels_like}}°C. {{weather.description}}.</p>
+                {% endfor %}
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional
+                    content. This content is a little bit longer.</p>
+                </div>
+                <div class="col">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional
+                    content. This content is a little bit longer.</p>
+                </div>
+              </div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">{{weather_data.dt}}</small>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-8">
+  
+        <div class="card border-light bg-opacity-50">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <img src={{ icon_current_weather }} alt="">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- <h1>{{ wallpaper_data.location }}</h1>
+  <p class="lead">{{ weather_data }}</p>
+  <img src={{ icon_current_weather }} alt="">
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+  </p> -->
