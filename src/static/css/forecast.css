@@ -1,0 +1,30 @@
+.plot {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.plot::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.ct-series-a .ct-line {
+    stroke: white;
+}
+
+.ct-series-a .ct-point {
+    stroke: white;
+    stroke-width: 10px;
+    stroke-linecap: round;
+}
+
+.ct-label {
+    /* font-size: 15px; */
+    color: white;
+}
+
+.ct-horizontal, .ct-vertical {
+    stroke: white;
+}
+

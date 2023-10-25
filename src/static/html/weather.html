@@ -6,21 +6,28 @@
 
   <div class="col-md-4">
 
-    <div class="card text-center h-100 text-bg-secondary bg-opacity-50">
-      <div class="card-header text-bg-secondary bg-opacity-25 font-monospace">
-        <img class="" src="/static/image/location_black.png" alt="" height="24" width="24">
+    <div class="card h-100 text-center text-bg-secondary bg-opacity-25">
+      <div class="card-header text-bg-secondary bg-opacity-25 font-monospace" id="location">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode" data-name="Isolation Mode" viewBox="0 0 24 24"
+          width="20" height="20">
+          <path style="fill: #ffffff;"
+            d="M12,.021A10.077,10.077,0,0,0,1.935,10.087c0,5.274,8.166,12.329,9.1,13.117l.967.817.967-.817c.932-.788,9.1-7.843,9.1-13.117A10.077,10.077,0,0,0,12,.021Zm0,20.043c-3.065-2.792-7.067-7.328-7.067-9.977a7.067,7.067,0,1,1,14.134,0C19.067,12.731,15.064,17.269,12,20.064Z" />
+          <circle style="fill: #ffffff;" cx="12" cy="10.002" r="2.997" />
+        </svg>
         {{weather_now.name}}, {{weather_now.sys.country}}
       </div>
-      <div class="card-body">
-        <h1 class="card-title font-monospace"><img src={{icon_weather_now}} alt="icon weather now"> {{weather_now.main.temp}}°C</h1>
+      <div class="card-body p-0">
+        <h1 class="card-title font-monospace"><img src={{icon_weather_now}} alt="icon weather now">
+          {{weather_now.main.temp}}°C</h1>
         <p class="card-text">
           <!-- With supporting text below as a natural lead-in to additional content. -->
         <div class="container text-center">
           <div class="row row-cols-1">
-            <div class="col font-monospace">Feels like {{weather_now.main.feels_like}}°C. {{weather_now.weather.description}}.</div>
+            <div class="col font-monospace mb-3">Feels like {{weather_now.main.feels_like}}°C.
+              {{weather_now.weather.description}}.</div>
           </div>
           <div class="row row-cols-1 row-cols-sm-2">
-            <div class="col font-monospace">Pressure:
+            <div class="col font-monospace mb-2">
               <svg width="15pt" height="15pt" viewBox="0 0 96 96" class="icon-pressure">
                 <g data-v-7bdd0738="" transform="translate(0,96) scale(0.100000,-0.100000)" fill="#ffffff"
                   stroke="none">
@@ -40,27 +47,56 @@
               </svg>
               {{weather_now.main.pressure}}hPa
             </div>
-            <div class="col font-monospace">Humidity: {{weather_now.main. humidity}}</div>
-            <div class="col font-monospace">Wind:
+            <div class="col font-monospace mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20"
+                height="20">
+                <path style="fill: #ffffff;"
+                  d="M10,11.5A1.5,1.5,0,1,1,8.5,10,1.5,1.5,0,0,1,10,11.5ZM15.5,15A1.5,1.5,0,1,0,17,16.5,1.5,1.5,0,0,0,15.5,15ZM8,18h3.2L16,10H12.8Zm11.071,3.071h0a10.015,10.015,0,0,0-.012-14.154L12,.013,4.929,6.929A10,10,0,1,0,19.071,21.071ZM16.95,9.05a7,7,0,1,1-9.912.012L12,4.209Z" />
+              </svg>
+              {{weather_now.main. humidity}}
+            </div>
+            <div class="col font-monospace mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20"
+                height="20">
+                <path style="fill: #ffffff;"
+                  d="M24,15a4,4,0,0,1-8,0h2a2,2,0,1,0,2-2H10V11h7a3,3,0,1,0-3-3V9H12V8a4.99,4.99,0,1,1,8.886,3.107A4,4,0,0,1,24,15ZM8,11H0v2H8Zm3-7A4,4,0,0,0,3,4H5A2,2,0,1,1,7,6H0V8H7A4,4,0,0,0,11,4Zm0,12H0v2H11a2,2,0,1,1-2,2H7a4,4,0,1,0,4-4Z" />
+              </svg>
+              {{weather_now.wind.speed}}m/s
               <svg viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"
                 style="transform: rotate({{weather_now.wind.deg}}deg); height: 10pt">
                 <g fill="#ffffff">
-                  <path
+                  <path style="fill: #ffffff;"
                     d="M510.5,749.6c-14.9-9.9-38.1-9.9-53.1,1.7l-262,207.3c-14.9,11.6-21.6,6.6-14.9-11.6L474,48.1c5-16.6,14.9-18.2,21.6,0l325,898.7c6.6,16.6-1.7,23.2-14.9,11.6L510.5,749.6z">
                   </path>
-                  <path
+                  <path style="fill: #ffffff;"
                     d="M817.2,990c-8.3,0-16.6-3.3-26.5-9.9L497.2,769.5c-5-3.3-18.2-3.3-23.2,0L210.3,976.7c-19.9,16.6-41.5,14.9-51.4,0c-6.6-9.9-8.3-21.6-3.3-38.1L449.1,39.8C459,13.3,477.3,10,483.9,10c6.6,0,24.9,3.3,34.8,29.8l325,898.7c5,14.9,5,28.2-1.7,38.1C837.1,985,827.2,990,817.2,990z M485.6,716.4c14.9,0,28.2,5,39.8,11.6l255.4,182.4L485.6,92.9l-267,814.2l223.9-177.4C454.1,721.4,469,716.4,485.6,716.4z">
                   </path>
                 </g>
               </svg>
-              {{weather_now.wind.speed}}m/s {{weather_now.wind.horizon_side}}
+              {{weather_now.wind.horizon_side}}
             </div>
-            <div class="col font-monospace">Visibility: {{weather_now.visibility}}</div>
-            <div class="col font-monospace">Sunrise: <img src="/static/image/sunrise.png" alt="sunrise"
-                height="20">{{weather_now.sys.sunrise}}
+            <div class="col font-monospace mb-3"><svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode"
+                data-name="Isolation Mode" viewBox="0 0 24 24" width="20" height="20">
+                <path style="fill: #ffffff;"
+                  d="M23.8,11.478c-.13-.349-3.3-8.538-11.8-8.538S.326,11.129.2,11.478L0,12l.2.522c.13.349,3.3,8.538,11.8,8.538s11.674-8.189,11.8-8.538L24,12ZM12,18.085c-5.418,0-8.041-4.514-8.79-6.085C3.961,10.425,6.585,5.915,12,5.915S20.038,10.424,20.79,12C20.038,13.576,17.415,18.085,12,18.085Z" />
+                <circle style="fill: #ffffff;" cx="12" cy="12" r="4" />
+              </svg>
+              {{weather_now.visibility}}</div>
+            <div class="col font-monospace mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20"
+                height="20">
+                <path style="fill: #ffffff;"
+                  d="M19.938,21a7.949,7.949,0,0,0-1.126-3.191l2.947-2.947-2.121-2.121-2.852,2.852A7.967,7.967,0,0,0,13.5,14.142V10h-3v4.142a7.967,7.967,0,0,0-3.286,1.451L4.362,12.741,2.241,14.862,5.188,17.81A7.939,7.939,0,0,0,4.062,21H0v3H24V21ZM12,17a5.009,5.009,0,0,1,4.9,4H7.1A5.009,5.009,0,0,1,12,17ZM10.5,4H7.538L11.211.327a1.115,1.115,0,0,1,1.578,0L16.462,4H13.5V8h-3Z" />
+              </svg>
+              {{weather_now.sys.sunrise}}
             </div>
-            <div class="col font-monospace">Sunset: <img src="/static/image/sunset.png" alt="sunset"
-                height="20">{{weather_now.sys.sunset}}
+            <div class="col font-monospace">
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20"
+                height="20">
+                <path style="fill: #ffffff;"
+                  d="M11.211,7.673,7.538,4H10.5V0h3V4h2.962L12.789,7.673A1.115,1.115,0,0,1,11.211,7.673ZM24,21v3H0V21H4.062a7.949,7.949,0,0,1,1.126-3.191L2.241,14.862l2.121-2.121,2.852,2.852A7.967,7.967,0,0,1,10.5,14.142V10h3v4.142a7.957,7.957,0,0,1,3.285,1.451l2.853-2.852,2.121,2.121-2.947,2.947A7.964,7.964,0,0,1,19.938,21ZM7.1,21h9.8a5,5,0,0,0-9.8,0Z" />
+              </svg>
+              {{weather_now.sys.sunset}}
             </div>
           </div>
         </div>
@@ -68,33 +104,46 @@
       </div>
 
       <div class="card-footer d-flex justify-content-between text-bg-secondary bg-opacity-25 font-monospace">
-        <a href="https://openweathermap.org/">
+        <a href="https://openweathermap.org/city/{{weather_now.id}}">
           <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt=""
             height="25">
         </a>
         {{weather_now.dt}}
       </div>
-      
+
     </div>
 
   </div>
 
   <div class="col-md-8">
-
-    <div class="card text-center h-100 text-bg-secondary bg-opacity-50">
+    <div class="card h-100 text-center text-bg-secondary bg-opacity-25">
       <div class="card-header text-bg-secondary bg-opacity-25 font-monospace">
         Forecast
       </div>
-      <div class="card-body">
+      <div class="card-body p-0 d-flex">
+        <div class="temp-value"></div>
+        <div class="plot" style="max-width: 100%; overflow: auto; max-height: 100%;">
+          <!-- height: 300px; -->
+          <div class="ct-chart" id="weather-chart" style="width: 2000px; height: 100%; min-height: 300px"></div>
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between text-bg-secondary bg-opacity-25 font-monospace">
+        <a href="https://openweathermap.org/city/{{weather_now.id}}">
+          <img src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt=""
+            height="25">
+        </a>
+        {{weather_now.dt}}
       </div>
     </div>
-
   </div>
 
 </div>
 
-<script>
 
-</script>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link rel="stylesheet" href="/static/css/forecast.css">
+<script src="/static/js/forecast.js"></script>
+
 
 {% endblock %}

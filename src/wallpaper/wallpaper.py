@@ -3,6 +3,7 @@ from fastapi.templating import Jinja2Templates
 import requests
 import json
 import re
+from wallpaper.schemas import WallpaperModel
 
 router = APIRouter(prefix="/wallpaper", tags=["wallpaper"])
 
@@ -35,7 +36,7 @@ def extract_location(input_string: str) -> {"city": str, "state": str}:
 
 
 @router.get("")
-async def wallpaper(id: int = 0):
+async def wallpaper(id: int = 0) -> WallpaperModel:
     '''
     returns information about the current Bing Wallpaper
     '''

@@ -4,6 +4,8 @@ import requests
 import json
 from config import OPENWEATHERMAP_API_KEY
 
+from weather.schemas import DirectModel
+
 from datetime import datetime, timedelta
 import pytz
 
@@ -22,6 +24,18 @@ def seconds_to_date(seconds: int, timezone_offset: int) -> str:
     dt = dt.astimezone(custom_timezone)
     formatted_date = dt.strftime("%b %d, %I:%M%p")
     return formatted_date
+
+def seconds_to_datetime_string(seconds):
+    # Преобразуем секунды в объект datetime
+    dt = datetime.fromtimestamp(seconds)
+    
+    # Если время 00:00 или 24:00
+    if dt.hour == 0 or dt.hour == 24:
+        return dt.strftime("%b %d")
+    else:
+        # Время в формате "3pm" или "3am"
+        return dt.strftime("%I%p").lstrip("0").lower()
+
 
 
 def date_to_seconds(date_str: str) -> int:
@@ -81,7 +95,7 @@ async def now(city: str = 'Tokur'):
                 "speed": round(data['wind']['speed'], 1),
                 "deg": round(data["wind"]["deg"]),
                 "horizon_side": get_horizon_side(round(data["wind"]["deg"])),
-                "gust": round(data['wind']['gust'], 1)
+                # "gust": round(data['wind']['gust'], 1)
             },
             "clouds": {
                 "all": round(data['clouds']['all'])
@@ -129,7 +143,7 @@ async def forecast(city: str = 'Tokur', count: int = 40):
 
         for day in data['list']:
             forecast_data['list'].append({
-                'date': date_to_seconds(day['dt_txt']),
+                'date': seconds_to_datetime_string(date_to_seconds(day['dt_txt'])), # date_to_seconds(day['dt_txt']),
                 'pod': day['sys']['pod'],
                 'visibility': f"{day['visibility'] / 1000}km" if day['visibility'] >= 1000 else f"{day['visibility']}m",
                 'wind': day['wind']['speed'],
@@ -156,7 +170,7 @@ async def forecast(city: str = 'Tokur', count: int = 40):
 
 
 @router.get('/direct')
-async def direct(city: str = 'Tokur'):
+async def direct(city: str = 'Tokur') -> DirectModel:
     '''
     /direct returns . . .
     '''

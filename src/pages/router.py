@@ -84,7 +84,7 @@ async def about(request: Request):
     if weather_now['cod'] != 200:
         return RedirectResponse("/page/tokur")
 
-    return templates.TemplateResponse("canvas.html", {
+    return templates.TemplateResponse("about.html", {
         'request': request,
         'year': datetime.now().year,
         'wallpaper_data': wallpaper_data
