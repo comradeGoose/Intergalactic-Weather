@@ -1,8 +1,8 @@
 FROM python:3.10.8
 
-RUN mkdir /intergalactic
+RUN mkdir /intergalactic_weather
 
-WORKDIR /intergalactic
+WORKDIR /intergalactic_weather
 
 COPY requirements.txt .
 
